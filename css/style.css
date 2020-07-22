@@ -1,0 +1,250 @@
+
+/* Fylo data storage styles */
+:root {
+    --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --dark-blue:  hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%); 
+    --font: 14px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: var(--very-dark-blue) url(../images/bg-mobile.png) left top fixed no-repeat;
+    background-size: 100%;
+    background-clip: border-box;
+    font-family: 'Ralway', 'Segoe UI', Tahoma, Verdana, sans-serif ;
+}
+
+.container {
+    width: 80%;
+    margin: 5em auto;
+}
+
+section {
+    background-color: var(--dark-blue);
+    animation: move 2s infinite alternate;
+
+}
+
+.section-one {
+    margin: 0 auto;
+    padding: 3em 2em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.section-one .icons {
+  margin-top: 3em;
+}
+
+.section-one .icons a {
+    padding: 1em;
+    background-color: var(--very-dark-blue);
+    border-radius: 10px;
+}
+
+.section-two {
+    margin: 2em 0;
+    padding: 3em 2em;
+    border-radius: 10px;
+    color: var(--pale-blue);
+}
+
+.section-two p {
+    margin-top: -.5em;
+}
+
+.section-two .range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5em;
+}
+
+.section-two .progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: var(--very-dark-blue);
+    border-radius: 30px;
+}
+
+ .progress-bar .gradient {
+    width: 70%;
+    height: 15px;
+    display: inline-block;
+    border-radius: 30px;
+    background-image: linear-gradient(to right,  hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    z-index: -1;
+ }
+
+ .progress-bar .white-tip {
+     width: 12px;
+     height: 12px;
+     display: inline-block;
+     background-color: var(--pale-blue);
+     border-radius: 50%;
+     margin-left: -1.15em;
+     position: relative;
+     bottom: 6.70%;
+ }
+
+ .data-balance {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #fff;
+     border-radius: 10px;
+     z-index: 1;
+     position: absolute;
+     bottom: 18%;
+     left: 25%;
+     padding: 0 2em;
+ }
+
+ .data-balance h2 {
+     font-weight: 700;
+ }
+
+ .data-balance p {
+     margin-left: 1em;
+     text-transform: uppercase;
+     opacity: .5;
+ }
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution p { 
+    opacity: 0.7;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+    text-decoration: none;
+}
+
+
+@keyframes move {
+   /* 0%*/ from {
+        transform: translateY(0px);
+    }
+
+   /* 100% */ to {
+        transform: translateY(20px);
+    }
+
+}
+
+
+@media (min-width: 400px) {
+    .data-balance{
+        padding: 0 3em;
+    }
+}
+
+@media (min-width: 550px) {
+    .data-balance{
+        padding: 0 5em;
+    }
+}
+
+
+@media (min-width: 950px) {
+
+    body {
+        background: var(--very-dark-blue) url(../images/bg-desktop.png) bottom fixed no-repeat;
+        background-size: 100%;
+        background-clip: border-box;
+    }
+
+    .container {
+        width: 70%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 3em;
+    }
+    
+    .section-one {
+        width: 30%;
+        margin: 0 2em;
+        padding: 3em 2em;
+    }
+        
+    .section-one .logo {
+        font-size: 25px;
+    }
+
+
+    .section-one .icons {
+        margin-top: -4em;
+        justify-content: space-between;
+    }
+
+    .section-one .icons a {
+        padding: 1em;
+        background-color: var(--very-dark-blue);
+        border-radius: 10px;
+    }
+
+    .section-two {
+        width: 60%;
+        margin: 2em 1em 0;
+        padding: 3.5em 2em;
+        border-radius: 10px;
+        color: var(--pale-blue);
+    }
+
+    .section-two p:nth-child(1) {
+       font-size: 1.2em;
+    }
+
+    .data-balance {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 10px;
+        z-index: 1;
+        position: absolute;
+        bottom: 65%;
+        left: 70%;
+        padding: 0;
+    }
+
+    .data-balance::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        margin-left: 2em;
+        border-width: 25px;
+        border-style: solid;
+        border-color:#fff transparent transparent transparent; 
+        transform: skewX(40deg); 
+    }
+
+    
+    .attribution { 
+        font-size: 14px; 
+        text-align: center; 
+    }
+    
+    .attribution p { 
+        color: var(--pale-blue); 
+    }
+    }
